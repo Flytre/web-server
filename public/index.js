@@ -1,34 +1,47 @@
 #!/usr/bin/nodejs
 
-// -------------- load packages -------------- //
-// INITIALIZATION STUFF
-
+// initialize express and app class object
 const express = require('express');
 const app = express();
 
-console.log('class object app created');
+// initialize handlebars templating engine
+const hbs = require('hbs')
+app.set('view engine', 'hbs')
+
+// initialize the built-in library 'path'
+const path = require('path')
+console.log(__dirname)
+app.use(express.static(path.join(__dirname, 'static')))
 
 // -------------- express 'get' handlers -------------- //
 // These 'getters' are what fetch your pages
 
 app.get('/', function (req, res) {
-    console.log('default landing page accessed!');
-    res.send('hola');
+    res.render('formtemplate');
 });
 
-app.get('/foo', function (req, res) {
-    res.send('requested foo');
-});
+app.get('/madlib', function (req, res) {
 
-app.get('/not_a_search', function (req, res) {
-    var theQuery = req.query.q;
-    res.send('query parameter:' + theQuery);
+    const {name, city, animal, activity, number, predator, image} = req.query;
+
+    const params = {
+        'name': name,
+        'place': city,
+        'animal': animal,
+        'activity': activity,
+        'number': number,
+        'predator' : predator,
+        'image' : image
+    };
+
+    res.render('madlib', params);
 });
 
 
 // -------------- listener -------------- //
-// // The listener is what keeps node 'alive.'
+// // The listener is what keeps node 'alive.' 
 
+// var listener = app.listen(process.env.PORT || 8080, process.env.HOST || "0.0.0.0", function() {
 const listener = app.listen(process.env.PORT || 8080, process.env.HOST || "0.0.0.0", function () {
     console.log("Express server started");
 });

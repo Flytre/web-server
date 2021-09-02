@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>Form</title>
+</head>
+<body>
+
+
+<h2>MadLib Form</h2>
+
+<form action="/madlib" method="get">
+    <label for="name">What is your first name?</label>
+    <input type="text" id="name" name="name" placeholder="Your Name"><br>
+
+    <label for="city">Where were you born?</label>
+    <input type="text" id="city" name="city" placeholder="someplace cool"><br>
+
+    <label for="animal">What's a strange animal?</label>
+    <input type="text" id="animal" name="animal" placeholder="cool animal"><br>
+
+    <label for="activity">What's a funny activity</label>
+    <input type="text" id="activity" name="activity" placeholder="funny activity"><br>
+
+    <label for="number">Random number</label>
+    <input type="number" id="number" name="number" placeholder="integer">
+
+    <p>Is the animal a predator?</p>
+    <input type="radio" id="predator_yes" name="predator" value="Yes">
+    <label for="predator_yes">Yes</label><br>
+    <input type="radio" id="predator_no" name="predator" value="No">
+    <label for="predator_no">No</label><br>
+
+    <label for="image">Image</label>
+    <select id="image" name="image">
+        <option value="dog">Dog</option>
+        <option value="laughing">Laughing Face</option>
+        <option value="god">God</option>
+    </select>
+
+    <button type="submit" value="Submit">Submit</button>
+</form>
+
+<ul>
+    <li>the "action" attribute of the form is the destination of the form</li>
+    <li>the "method" attribute of the form specifies how key/value pairs will be sent to the server. GET sends
+        parameters in the url. POST is a more secure transmission of info.
+    </li>
+    <li>the "for" attribute of a label must match the id of its associated input</li>
+    <li>the "name" attribute of a becomes the key of the key-value pair sent to the server</li>
+    <li>it's preferential to use a button (tag) of type=submit instead of a submit (tag), as submit tags are not
+        stylable
+    </li>
+</ul>
+
+</body>
+</html>
