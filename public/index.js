@@ -17,6 +17,10 @@ app.use(express.static(path.join(__dirname, 'static')))
 // These 'getters' are what fetch your pages
 
 app.get('/', function (req, res) {
+    res.render('index');
+});
+
+app.get('/madlib_form', function (req, res) {
     res.render('formtemplate');
 });
 
