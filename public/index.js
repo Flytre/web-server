@@ -42,6 +42,10 @@ app.get('/madlib', function (req, res) {
 });
 
 
+const numbers = require('./routes/number.js');
+app.use(numbers);
+
+
 // -------------- listener -------------- //
 // // The listener is what keeps node 'alive.' 
 
