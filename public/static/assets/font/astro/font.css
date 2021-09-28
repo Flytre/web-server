@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'a_astro_spaceregular';
+    src: url('astrospace-ez2bg-webfont.woff2') format('woff2'),
+    url('astrospace-ez2bg-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

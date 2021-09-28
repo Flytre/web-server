@@ -1,14 +1,24 @@
 
 body {
     text-align: center;
-    background-image: url("../img/nature.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
+    color: white;
 }
 
 input {
     border-radius: 5px;
     background-color:rgba(0, 0, 0, 0.5);
+    border: 2px solid white;
+    color: white;
+}
+
+select {
+    position: relative;
+    display: inline-block;
+    background-color: black;
+    border: 2px solid white;
+    color: white;
 }
 
 .center {

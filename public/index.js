@@ -20,6 +20,9 @@ app.get('/', function (req, res) {
     res.render('index');
 });
 
+app.get('/labs', function (req, res) {
+    res.render('labs');
+});
 app.get('/madlib_form', function (req, res) {
     res.render('formtemplate');
 });
@@ -41,6 +44,9 @@ app.get('/madlib', function (req, res) {
     res.render('madlib', params);
 });
 
+
+const weather = require('./routes/weather.js');
+app.use(weather);
 
 const numbers = require('./routes/number.js');
 app.use(numbers);

@@ -1,25 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Madlibs</title>
+    <meta name="description" content="Madlibs page.">
+    <meta name="author" content="Flytre">
 
+    <meta property="og:title" content="Madlibs">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://user.tjhsst.edu/2022arahman/">
+    <meta property="og:description" content="Madlibs page.">
+    <meta property="og:image" content="assets/logo.png">
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="./css/madlibs.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <script src="/js/all.js"></script>
 </head>
 <body>
+    <header id="header"></header>
+    <section id="header-break"></section>
 	<div id="container_1">
 		<h3>Some Fantastic Story</h3>
-
-		<p><img src="./img/{{image}}.jpg" alt="dogs">
+        <img src="./img/{{image}}.jpg" alt="dogs">
+		<p>
             Once upon a time {{name}} was walking down the streets of {{place}}. They were casually {{activity}} when a god showed up.
             He asked {{name}} to pick a random number. He then asked {{name}} if they liked predatory animals. {{name}} replied {{predator}}.
             {{name}} picked {{number}}. The god decided to create {{number}} {{animal}}s. {{name}} was not very happy about that.
 		</p>
 
 		<p>Notice in the source of this page there's a little empty div that has style="clear: both;". This is a little trick that allows the div with id="container_1" to wrap around the image</p>
-		<div style="clear: both;"></div> 
+		<div style="clear: both;"></div>
 
-	</div>
+    </div>
 
+    <footer id="footer"></footer>
 </body>
 </html>

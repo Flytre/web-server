@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Weather</title>
+    <meta name="description" content="Weather Lab on Aaron's site.">
+    <meta name="author" content="Flytre">
+
+    <meta property="og:title" content="The Weather">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://user.tjhsst.edu/2022arahman/">
+    <meta property="og:description" content="Weather Lab on Aaron's site.">
+    <meta property="og:image" content="assets/logo.png">
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="css/home.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="css/weather.css">
+
+    <script src="/js/all.js"></script>
+</head>
+<body>
+<header id="header"></header>
+<section id="header-break"></section>
+<div class="center">
+    <h1>Weather at {{place}}</h1>
+    <ul>
+        {{#each data}}
+            <p class = "small">{{this.time}} - {{this.timeOfDay}}</p>
+            <p class="small">Temperature: {{this.temperature}}</p>
+            <p class="small">Wind: {{this.wind}}</p>
+
+            <hr>
+        {{/each}}
+    </ul>
+</div>
+<footer id="footer"></footer>
+</body>
+</html>

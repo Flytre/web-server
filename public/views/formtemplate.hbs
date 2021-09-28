@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-    <title>Form</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Madlibs Form</title>
+    <meta name="description" content="Madlibs form page.">
+    <meta name="author" content="Flytre">
+
+    <meta property="og:title" content="Madlibs Form">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://user.tjhsst.edu/2022arahman/">
+    <meta property="og:description" content="Madlibs form page.">
+    <meta property="og:image" content="assets/logo.png">
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="./css/form.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="/js/all.js"></script>
 </head>
 <body>
-
-
+<header id="header"></header>
+<section id="header-break"></section>
 <h2>MadLib Form</h2>
-
 <form action="./madlib" method="get">
 
     <table class="center">
@@ -34,7 +58,7 @@
             <td><input type="number" id="number" name="number" placeholder="integer"></td>
         </tr>
         <tr>
-            <td><p>Is The Strange Animal Predatory: </p></td>
+            <td>Is The Strange Animal Predatory: </td>
             <td><input type="radio" id="predator_yes" name="predator" value="Yes">
                 <label for="predator_yes">Yes</label>
                 <input type="radio" id="predator_no" name="predator" value="No">
@@ -55,6 +79,6 @@
 
     <button type="submit" value="Submit">Submit</button>
 </form>
-
+<footer id="footer"></footer>
 </body>
 </html>

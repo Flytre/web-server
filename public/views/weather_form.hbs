@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather Request Form</title>
+    <meta name="description" content="Request the weather from a coordinate here!">
+    <meta name="author" content="Flytre">
+
+    <meta property="og:title" content="Weather Request Form">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://user.tjhsst.edu/2022arahman/">
+    <meta property="og:description" content="Request the weather from a coordinate here!">
+    <meta property="og:image" content="assets/logo.png">
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="css/weather_form.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/js/all.js"></script>
+</head>
+<body>
+<header id="header"></header>
+<section id="header-break"></section>
+<div class="center">
+    <div class="mapouter">
+        <div class="gmap_canvas">
+            <iframe width="600" height="500" id="gmap_canvas"
+                    src="https://maps.google.com/maps?t=&amp;z=3&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+        </div>
+    </div>
+</div>
+
+<form action="./getweather" method="get">
+
+    <table class="center" style="color: white">
+        <tr>
+            <td><label for="latitude">Latitude: </label></td>
+            <td><input type="text" id="latitude" name="lat" placeholder="latitude"></td>
+        </tr>
+        <tr>
+            <td><label for="longitude">Longitude: </label></td>
+            <td><input type="text" id="longitude" name="long" placeholder="longitude"></td>
+        </tr>
+    </table>
+    <div class="center"><button type="submit" value="Submit">Submit</button></div>
+
+
+</form>
+
+
+<footer id="footer"></footer>
+</body>
+</html>
