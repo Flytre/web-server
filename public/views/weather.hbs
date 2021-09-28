@@ -28,7 +28,7 @@
 
     <link rel="stylesheet" href="css/weather.css">
 
-    <script src="/js/all.js"></script>
+    <script src="js/all.js"></script>
 </head>
 <body>
 <header id="header"></header>
@@ -37,7 +37,7 @@
     <h1>Weather at {{place}}</h1>
     <ul>
         {{#each data}}
-            <p class = "small">{{this.time}} - {{this.timeOfDay}}</p>
+            <p class="small">{{this.time}} - {{this.timeOfDay}}</p>
             <p class="small">Temperature: {{this.temperature}}</p>
             <p class="small">Wind: {{this.wind}}</p>
 

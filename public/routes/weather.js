@@ -10,11 +10,9 @@ const options = {
 };
 
 
-router.get("/weather_form",(req, res) => {
+router.get("/weather_form", (req, res) => {
     res.render("weather_form");
 })
-
-
 
 
 router.get("/getweather", getRawData, useForecast)
@@ -53,7 +51,7 @@ function getRawData(req, res, next) {
             }
 
 
-           let location = json.properties.relativeLocation.properties
+            let location = json.properties.relativeLocation.properties
 
             res.locals.place = location.city + ", " + location.state;
             res.locals.link = json.properties.forecastHourly;
@@ -87,7 +85,7 @@ function useForecast(req, res, next) {
             }
             const params = {
                 'data': formattedData,
-                'place' : res.locals.place
+                'place': res.locals.place
             }
 
             res.render('weather', params)

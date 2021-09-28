@@ -100,7 +100,7 @@ p {
     padding-top: 90px;
     height: 0;
     width: 100%;
-    background: linear-gradient(to right, rgb(183, 134, 40), rgb(198, 147, 32),rgb(219, 165, 20),rgb(238, 182, 9),rgb(252, 194, 1));
+    background: linear-gradient(to right, rgb(183, 134, 40), rgb(198, 147, 32), rgb(219, 165, 20), rgb(238, 182, 9), rgb(252, 194, 1));
 }
 
 .social_link {
@@ -122,12 +122,13 @@ p {
 }
 
 hr {
-    background: linear-gradient(to right, rgb(183, 134, 40), rgb(198, 147, 32),rgb(219, 165, 20),rgb(238, 182, 9),rgb(252, 194, 1));
+    background: linear-gradient(to right, rgb(183, 134, 40), rgb(198, 147, 32), rgb(219, 165, 20), rgb(238, 182, 9), rgb(252, 194, 1));
     height: 10px;
     border: 0px;
 }
+
 h3 {
-    color:white;
+    color: white;
     text-align: center;
     font-size: 40px;
 }

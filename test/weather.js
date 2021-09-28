@@ -1,4 +1,3 @@
-
 // import statement
 const https = require('https');
 
@@ -13,24 +12,24 @@ const options = {
 };
 
 console.log('A');
-https.get(url, options, function(response) {
+https.get(url, options, function (response) {
 
     console.log('B')
     let rawData = '';
-    response.on('data', function(chunk) {
+    response.on('data', function (chunk) {
         console.log('C')
         rawData += chunk;
     });
     console.log('D')
 
-    response.on('end', function() {
+    response.on('end', function () {
         console.log('E')
         console.log(rawData);  // THIS IS WHERE YOU HAVE ACCESS TO RAW DATA
         // obj = JSON.parse(rawData);
     });
     console.log('F')
 
-}).on('error', function(e) {
+}).on('error', function (e) {
     console.error(e);
 });
 console.log('G')

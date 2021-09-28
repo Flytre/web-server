@@ -37,8 +37,8 @@ app.get('/madlib', function (req, res) {
         'animal': animal,
         'activity': activity,
         'number': number,
-        'predator' : predator,
-        'image' : image
+        'predator': predator,
+        'image': image
     };
 
     res.render('madlib', params);

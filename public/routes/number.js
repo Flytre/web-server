@@ -8,10 +8,9 @@ router.get("/:number", function (req, res) {
     if (query === undefined || isNaN(query))
         query = 3
     let facts = []
-    if(req.params.number === Infinity || req.params.number === -Infinity) {
+    if (req.params.number === Infinity || req.params.number === -Infinity) {
         facts.push(req.params.number + " is infinite.")
-    }
-    else if (!isNaN(req.params.number)) {
+    } else if (!isNaN(req.params.number)) {
         const num = parseFloat(req.params.number);
         if (query > 0)
             facts.push(num + ' is a number');
@@ -32,7 +31,7 @@ router.get("/:number", function (req, res) {
 
     if (format === 'json') {
         res.send({
-            "facts" : facts
+            "facts": facts
         })
     } else
         res.render('numbers', params)
