@@ -1,1 +1,6 @@
 Number facts link: form / random
+
+
+
+>>Bar graph dog votes
+>>Integrate SQL

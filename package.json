@@ -4,6 +4,7 @@
     "hbs": "^4.1.2",
     "jQuery": "^1.7.4",
     "jquery": "^3.6.0",
+    "mysql": "^2.18.1",
     "node": "^16.9.1"
   },
   "name": "web-server",
@@ -22,5 +23,8 @@
     "url": "https://github.com/Flytre/web-server/issues"
   },
   "homepage": "https://github.com/Flytre/web-server#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "mysql2": "^2.3.0"
+  }
 }

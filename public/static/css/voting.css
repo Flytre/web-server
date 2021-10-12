@@ -1,0 +1,22 @@
+.doggo {
+    width: 10vw;
+    display: inline;
+}
+
+.inline {
+    display: inline;
+}
+
+.dog_name {
+    background-color: #999999;
+    border-radius: 10px;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.dog_name:hover {
+    background-color: #aaa;
+}

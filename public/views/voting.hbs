@@ -3,14 +3,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Aaron - Web Class</title>
-    <meta name="description" content="Aaron's webpage for the Fall '21 Web Development Class at TJHSST.">
+    <title>Voting Form</title>
+    <meta name="description" content="Vote on your favorite doggo!">
     <meta name="author" content="Flytre">
 
-    <meta property="og:title" content="Aaron - Web Class">
+    <meta property="og:title" content="Voting Form">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://user.tjhsst.edu/2022arahman/">
-    <meta property="og:description" content="Aaron's webpage for the Fall '21 Web Development Class at TJHSST.">
+    <meta property="og:description" content="Vote on your favorite doggo!">
     <meta property="og:image" content="assets/logo.png">
 
 
@@ -23,35 +23,35 @@
     <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
 
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/labs.css">
+    <link rel="stylesheet" href="css/voting.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
     <script src="js/all.js"></script>
-    <script src="js/labs.js"></script>
+    <script src="js/voting.js"></script>
+
 </head>
 <body>
 <header id="header"></header>
+
+
 <section id="header-break"></section>
-<div class="center">
-    <p>Labs</p>
 
-    <div id="labs">
-        <div class="lab" onclick="window.location='./madlib_form';">
-            <div class="inner">Madlibs</div>
-        </div>
-        <div class="lab" id="number_button">Number Facts</div>
-        <div class="lab" onclick="window.location='./weather_form';">Weather</div>
-        <div class="lab" onclick="window.location='./voting';">Voting</div>
-        <div class="lab">Coming Soon</div>
-    </div>
-</div>
 
-<script>
-    $("#number_button").on('click', () => {
-        window.location = "./" + Math.floor(Math.random() * 100);
-    })
-</script>
+<p class="center">Vote for your favorite dog!</p>
+
+<table class="center" style="color: white">
+    <tr>
+        <td><img class="doggo" src="assets/voting/fido.png"></td>
+        <td class="dog_name" id="fido">Fido</td>
+        <td><img class="doggo" src="assets/voting/puffle.png"></td>
+        <td class="dog_name" id="puffle">Puffle</td>
+    </tr>
+    <tr>
+        <td><img class="doggo" src="assets/voting/rex.png" onclick="console.log('RAT')"></td>
+        <td class="dog_name" id="rex">Rex</td>
+        <td><img class="doggo" src="assets/voting/rick.png"></td>
+        <td class="dog_name" id="rick">Rick</td>
+    </tr>
+</table>
 
 <footer id="footer"></footer>
 </body>

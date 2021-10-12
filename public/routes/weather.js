@@ -41,22 +41,40 @@ function getRawData(req, res, next) {
 
         httpsCallback.on('end', () => {
 
-            let json = JSON.parse(rawData)
+                let json = undefined
 
-            if (json.status !== undefined && (json.status === 404 || json.status === 500)) {
-                res.render('error', {
-                    "error": "Point not in US: " + lat + " " + long + ""
-                });
-                return;
+                try {
+                    json = JSON.parse(rawData)
+                } catch (e) {
+                    res.render('error', {
+                        "error": "Server returned invalid data"
+                    });
+                    return;
+                }
+
+                if (json.status !== undefined && (json.status === 404 || json.status === 500)) {
+                    res.render('error', {
+                        "error": "Point not in US: " + lat + ", " + long + ""
+                    });
+                    return;
+                }
+
+                if(json.properties.forecastHourly === null) {
+                    res.render('error', {
+                        "error": "No weather data for location: " + lat + ", " + long + ""
+                    });
+                    return;
+                }
+
+
+                let location = json.properties.relativeLocation.properties
+
+                res.locals.place = location.city + ", " + location.state;
+                res.locals.link = json.properties.forecastHourly;
+                next();
             }
-
-
-            let location = json.properties.relativeLocation.properties
-
-            res.locals.place = location.city + ", " + location.state;
-            res.locals.link = json.properties.forecastHourly;
-            next();
-        });
+        )
+        ;
     }).on('error', function (e) {
         console.error(e);
     });
@@ -83,12 +101,11 @@ function useForecast(req, res, next) {
                 formatted.wind = obj.windSpeed + " " + obj.windDirection
                 formattedData.push(formatted)
             }
-            const params = {
+
+            res.render('weather', {
                 'data': formattedData,
                 'place': res.locals.place
-            }
-
-            res.render('weather', params)
+            })
         });
     });
 }

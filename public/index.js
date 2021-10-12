@@ -48,6 +48,9 @@ app.get('/madlib', function (req, res) {
 const weather = require('./routes/weather.js');
 app.use(weather);
 
+const voting = require('./routes/voting.js');
+app.use(voting);
+
 const numbers = require('./routes/number.js');
 app.use(numbers);
 
