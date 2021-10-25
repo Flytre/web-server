@@ -59,7 +59,7 @@ footer > p {
     display: inline;
 }
 
-.topnav a, #brand-container {
+.topnav a, .topnav .navp, #brand-container {
     float: left;
     color: #f2f2f2;
     text-align: center;
@@ -131,4 +131,8 @@ h3 {
     color: white;
     text-align: center;
     font-size: 40px;
+}
+
+#logout {
+    transform: translateY(-5px);
 }

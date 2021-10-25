@@ -51,10 +51,12 @@ app.use(weather);
 const voting = require('./routes/voting.js');
 app.use(voting);
 
+const premium = require('./routes/premium.js');
+app.use(premium);
+
+
 const numbers = require('./routes/number.js');
 app.use(numbers);
-
-
 // -------------- listener -------------- //
 // // The listener is what keeps node 'alive.' 
 

@@ -1,6 +1,3 @@
-Number facts link: form / random
-
-
-
->>Bar graph dog votes
->>Integrate SQL
+1. Login encrypted
+2. Logout
+3. Unlimited visits if logged in

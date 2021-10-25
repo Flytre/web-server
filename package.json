@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "cookie-session": "^1.4.0",
     "express": "^4.17.1",
     "hbs": "^4.1.2",
     "jQuery": "^1.7.4",
@@ -25,6 +26,7 @@
   "homepage": "https://github.com/Flytre/web-server#readme",
   "description": "",
   "devDependencies": {
+    "cookie-parser": "^1.4.5",
     "mysql2": "^2.3.0"
   }
 }
