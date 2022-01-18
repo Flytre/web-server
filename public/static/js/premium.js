@@ -2,7 +2,7 @@ $(function () {
 
     let x = 0;
 
-    $("#cookie").click((e) => {
+    $("#cookie").click(() => {
         let cookies = getCookieCountCookie()
         let cval = parseInt(cookies);
         if (Number.isInteger(cval)) {
@@ -11,10 +11,13 @@ $(function () {
             $("#cookie_count").text("" + cval)
         }
         x++;
-        $("#premium").append('<div id="x' + x + '" class="plus1" hidden>+1.0</div>');
+        $("#premium").append('<div id="x' + x + '" class="plus1" hidden> <img src="./img/cookie.png" alt="+1" class="cookie_1"></div>');
         let plus1 = $("#x" + x);
-        plus1.css("top", e.clientY);
-        plus1.css("left", e.clientX - 10);
+
+        let bounds = $("#cookie")[0].getBoundingClientRect();
+
+        plus1.css("left", bounds.x + Math.random() * bounds.width);
+        plus1.css("top", bounds.y + Math.random() * bounds.height);
         plus1.css("position", "absolute");
         plus1.css("width", "25px");
         plus1.css("height", "25px");

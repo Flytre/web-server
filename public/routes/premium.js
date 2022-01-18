@@ -1,37 +1,7 @@
 const express = require('express');
 const router = express.Router({strict: true})
 
-const cookieParser = require('cookie-parser')
-router.use(cookieParser())
-
-const cookieSession = require('cookie-session')
-router.use(cookieSession({
-    name: 'supersecretsession',
-    keys: ['KLF*&$$$$∫∆•˜', '56∫˚∆¥¨¨øœ´7YUHNBMJKA∂ƒ©˙∆§•∆ç˜˜']
-}))
-
 //LOG IN ==> ENCRYPTED, LOG IN ==> UNLIMITED PLAYS
-
-router.get("/login", (req, res) => {
-
-    let username = req.query.username
-
-    if (username === undefined) {
-        res.render('error', {error: "No username specified"})
-        return
-    }
-    req.session.username = username;
-
-    res.redirect("/")
-})
-
-
-router.get("/logout", (req, res) => {
-    if ('username' in req.session)
-        delete req.session.username;
-
-    res.redirect("/")
-})
 
 router.get("/premium", (req, res) => {
 
@@ -48,9 +18,3 @@ router.get("/premium", (req, res) => {
 })
 
 module.exports = router;
-
-router.get("/username", (req, res) => {
-    res.json({
-        "username": req.session.username
-    })
-})

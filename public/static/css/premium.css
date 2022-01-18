@@ -5,6 +5,8 @@
     margin-left: auto;
     margin-right: auto;
     padding: 5%;
+    transition: transform 0.125s;
+    transform: scale(0.99);
 }
 
 #premium {
@@ -16,6 +18,10 @@
 }
 
 #cookie:hover {
+    transform: scale(1.1);
+}
+
+#cookie:active {
     transform: scale(1.2);
 }
 
@@ -27,4 +33,16 @@
         top: 0;
         opacity: 0;
     }
+}
+
+.plus1 {
+    pointer-events:none;
+    width: 10%;
+    height: 10%;
+}
+
+.cookie_1 {
+    max-width: 200%;
+    max-height: 200%;
+    opacity: 50%;
 }

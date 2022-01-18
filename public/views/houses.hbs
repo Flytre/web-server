@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Great Houses</title>
+    <meta name="description" content="Edit the content of the great houses.">
+    <meta name="author" content="Flytre">
+
+    <meta property="og:title" content="Great Houses">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://user.tjhsst.edu/2022arahman/">
+    <meta property="og:description" content="Edit the content of the great houses.">
+    <meta property="og:image" content="assets/logo.png">
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/all.js"></script>
+    <script src="js/houses.js"></script>
+
+    <link rel="stylesheet" href="./css/houses.css">
+</head>
+<body>
+<header id="header"></header>
+<section id="header-break"></section>
+
+<div class="row">
+    {{#each houses as |this house_name|}}
+        <div class="column" data-house="{{house_name}}">
+            <div class="house-name"><p>{{house_name}} (<span class="house-points">{{lookup ../house_points
+                                                                                           house_name}}</span>)</p>
+            </div>
+            <table class="house-members">
+                <tbody>
+                {{#each this as |points member|}}
+                    <tr class="house-table">
+                        <td>
+                            <span class="member-name">{{member}}</span>
+                            <span class="member-separator">: </span>
+                            <span class="member-points">{{points}}</span>
+                            <span class="remove-points" data-member="{{member}}" data-house="{{house_name}}">-</span>
+                            <span class="add-points" data-member="{{member}}" data-house="{{house_name}}">+</span>
+                        </td>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+    {{/each}}
+</div>
+
+<div class="break"></div>
+<h2>Add Subject to House: </h2>
+<div class="add_subject">
+    <input id='subject-add-name' type="text" placeholder="name"/>
+    <input id="subject-add-house" type="text" placeholder="house">
+    <a id="subject-add-submit" target="__blank">Submit</a>
+</div>
+<footer id="footer"></footer>
+</body>
+</html>

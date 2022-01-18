@@ -1,0 +1,17 @@
+#header-break {
+    margin-bottom: 10px;
+}
+
+.dark-mode-flytre {
+    border: 5px solid #111;
+    border-radius: 10px;
+    background-color: #ccc;
+}
+
+.right-shift {
+    margin-left: 5%;
+}
+
+.left-shift {
+    margin-right: 5%;
+}

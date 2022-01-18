@@ -1,19 +1,7 @@
 const express = require("express");
 const router = express.Router({strict: true})
-const mysql = require('mysql2');
+const {storeProfileData, pool, getDatabaseNickname} = require('./oauth');
 
-// -------------- mysql initialization -------------- //
-// USE PARAMETERS FROM DIRECTOR DOCS!!!
-const sql_params = {
-    connectionLimit: 10,
-    user: process.env.DIRECTOR_DATABASE_USERNAME,
-    password: process.env.DIRECTOR_DATABASE_PASSWORD,
-    host: process.env.DIRECTOR_DATABASE_HOST,
-    port: process.env.DIRECTOR_DATABASE_PORT,
-    database: process.env.DIRECTOR_DATABASE_NAME
-};
-
-const pool = mysql.createPool(sql_params);
 
 router.get('/voting_result', ((req, res) => {
 
@@ -103,5 +91,23 @@ router.get('/voting', ((req, res) => {
     res.render('voting')
 }))
 
+
+router.get("/username", (req, res) => {
+
+    if ("session" in req && "username" in req.session) //If locally authenticated, give local username
+        res.json({
+            "username": req.session.username
+        })
+    else if ('authenticated' in req.session) //If authenticated, fetch the nickname and display that.
+        storeProfileData(req, res, () => {
+            getDatabaseNickname(req, res, () => {
+                res.json({
+                    "username": res.locals.stored_nickname !== "N/A" ? res.locals.stored_nickname : res.locals.profile.short_name
+                })
+            })
+        })
+    else //If not logged in, return empty object
+        res.json({})
+})
 
 module.exports = router;
